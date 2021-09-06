@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <div id="message-container">
+          Comments:
+          <%= render @messages %>
+        </div>
+        <%= form_for(@message, html: {class: "ui reply form-control", role: "form"}, url: message_path, remote: true) do |f| %>
+          <%= f.text_field :body, class: 'form-control' %>
+          <%= f.submit 'Enviar', class: 'btn btn-block btn-primary mt-1' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <div id="message-container">
+          Comments:
+          <%= render @messages %>
+        </div>
+        <%= form_for(@message, html: {class: "ui reply form-control", role: "form"}, url: message_path, remote: true) do |f| %>
+          <%= f.text_field :body, class: 'form-control' %>
+          <%= f.submit 'Enviar', class: 'btn btn-block btn-primary mt-1' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
