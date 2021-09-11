@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_220033) do
+ActiveRecord::Schema.define(version: 2021_09_11_175807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "banks", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.bigint "list_id", null: false
+    t.text "desc", null: false
+    t.boolean "completed", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_items_on_list_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "workspace_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["workspace_id"], name: "index_lists_on_workspace_id"
+  end
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
@@ -38,4 +60,14 @@ ActiveRecord::Schema.define(version: 2021_09_06_220033) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "workspaces", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "public_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["public_id"], name: "index_workspaces_on_public_id"
+  end
+
+  add_foreign_key "items", "lists"
+  add_foreign_key "lists", "workspaces"
 end
