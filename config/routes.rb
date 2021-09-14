@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   resources :users, except: [:new]
 
-  resources :banks
+  resources :banks do
+    resources :bank_agencies, only: %i[index]
+    resources :properties, only: %i[index]
+  end
   resources :tweets
   root to: 'dashboard#index'
   

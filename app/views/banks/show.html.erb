@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_bank_path(@bank) %> |
-<%= link_to 'Back', banks_path %>
+<div>
+  <h2><%= @bank.name %></h2>
+  <div>
+    <%= render partial: "bank_agencies/list", locals: { bank: @bank, bank_agencies: @bank.bank_agencies } %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<%= turbo_frame_tag "details_tab" do %>
+  <div>
+    <%= render partial: "shared/tabs" %>
+    <div>
+      <h3>Awards won by <%= bank.name %></h3>
+      <ul>
+        <% properties.each do |property| %>
+          <li><%= property.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
