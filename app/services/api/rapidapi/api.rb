@@ -1,4 +1,4 @@
-  class Rapidapi::Api
+  class Api::Rapidapi::Api
     def initialize
       @host = Rails.application.credentials[Rails.env.to_sym][:rapidapi][:host]
       @key = Rails.application.credentials[Rails.env.to_sym][:rapidapi][:key]

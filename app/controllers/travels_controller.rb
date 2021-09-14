@@ -14,7 +14,7 @@ class TravelsController < ApplicationController
   private
 
   def find_country(name)
-    request = Rapidapi::Api.new
+    request = Api::Rapidapi::Api.new
     request.execute(name)
   end
 end
