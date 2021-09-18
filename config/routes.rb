@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :addresses do
+    collection do
+      get :states
+    end
+  end
   # routes to authentication
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'

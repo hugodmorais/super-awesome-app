@@ -18,7 +18,7 @@ export default class extends Controller {
     let params = new URLSearchParams()
     params.append(this.paramValue, event.target.selectedOptions[0].value)
     params.append("target", this.selectTarget.id)
-
+    
     get(`${this.urlValue}?${params}`, {
       responseKind: "turbo-stream"
     })
