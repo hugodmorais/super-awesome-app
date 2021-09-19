@@ -9,6 +9,7 @@ export default class extends Controller {
   }
 
   connect() {
+    // set random id if id === "" on target -> data: { select_target: "select" }
     if (this.selectTarget.id === "") {
       this.selectTarget.id = Math.random().toString(36)
     }
