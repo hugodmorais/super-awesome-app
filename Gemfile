@@ -61,4 +61,6 @@ gem 'excon'
 # hotwire-rails
 gem 'hotwire-rails'
 
+gem 'httparty'
+
 gem "city-state", "~> 0.1.0"
