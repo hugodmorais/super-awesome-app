@@ -4,6 +4,20 @@ class Learn::Awesome
 
   def execute
   end
+
+  # test self
+  def my_self
+    puts self
+  end
+
+  def do_something
+    banana = "variable"
+    puts banana
+    puts self.banana
+  end
+  def banana
+    "method"
+  end
   
   # Enumerable #sum -- rails 7
   def enumerable_rails7
