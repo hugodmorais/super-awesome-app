@@ -15,6 +15,7 @@ class Message < ApplicationRecord
 
     # Scopes
     scope :custom_display, -> { order(:created_at).last(20) }
+    
     # Callbacks
 
     # Constants Methods
